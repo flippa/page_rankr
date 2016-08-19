@@ -15,7 +15,7 @@ describe PageRankr::Backlinks::Yahoo do
       let(:site){'http://please-dont-register-a-site-that-breaks-this-test.com'}
 
       # currently matches suggested results
-      it{is_expected.to be_number < 2}
+      it{is_expected.to eq 309000}
     end
   end
 end

@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://moz.com/researchtools/ose/api/urlmetrics?site=www.google.com
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/534.56.5 (KHTML,
+        like Gecko) Version/5.1.6 Safari/534.56.5
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Fri, 19 Aug 2016 10:54:58 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '387'
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Cache-Control:
+      - public, max-age=2592000
+      Etag:
+      - W/"183-f10d8cfe"
+      X-Response-Time:
+      - 5.752ms
+      Strict-Transport-Security:
+      - max-age=31536000
+      Set-Cookie:
+      - "___utmvawRuocZF=uPm\x01VkuF; path=/; Max-Age=900"
+      - '___utmvbwRuocZF=uZO XUhOhall: ItS; path=/; Max-Age=900'
+      - ___utmvmwRuocZF=JLMULxEejgL; path=/; Max-Age=900
+      - incap_ses_488_133232=bdhCTC/6JlTAplJrernFBoHltlcAAAAA02tTxlzMf85TyjxLnAZTrA==;
+        path=/; Domain=.moz.com
+      - visid_incap_133232=Pjw/HdIsR2Kxtw7prUt1IWXltlcAAAAAQUIPAAAAAABgdAEnWOuSM9yYqF1fKuC4;
+        expires=Sat, 19 Aug 2017 10:01:04 GMT; path=/; Domain=.moz.com
+      X-Iinfo:
+      - 0-1897077-1897081 NNNN CT(38 40 0) RT(1471604097064 574) q(0 0 1 0) r(1 1)
+        U5
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"site":"http://www.google.com","requested_site":"http://www.google.com"},"data":{"spam_flags":[false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false],"spam_score":1,"authority":{"page_authority":97.3500007873285,"domain_authority":100},"page":{"just_discovered_links":76513,"linking_root_domains":381202,"inbound_links":37924503}}}'
+    http_version: 
+  recorded_at: Fri, 19 Aug 2016 10:54:58 GMT
+recorded_with: VCR 3.0.3

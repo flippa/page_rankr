@@ -17,36 +17,47 @@ http_interactions:
     headers:
       Access-Control-Allow-Origin:
       - "*"
-      Content-Type:
-      - text/javascript; charset=UTF-8
-      X-Fb-Trace-Id:
-      - BpeBrTl2KGx
-      X-Fb-Rev:
-      - '1935378'
       Etag:
-      - '"084a2bbc7382540addc052eab83eb70ab32dd140"'
+      - '"666917dff19e3f1124da4ef81432fba15dd5537d"'
       Pragma:
       - no-cache
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
       Facebook-Api-Version:
-      - v2.0
+      - v2.1
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
+      Content-Type:
+      - text/javascript; charset=UTF-8
+      X-Fb-Trace-Id:
+      - CvBYRSuZwLc
+      X-Fb-Rev:
+      - '2518278'
+      Vary:
+      - Accept-Encoding
       X-Fb-Debug:
-      - xFW3ppjo0Z7nkLpAJnca8G1XRl8x7wxx1kns4aB+TO3YQXVHtW63dtq2Zk4tm5if+hcGNll6mMFNutFyqg1n9g==
+      - F0HAkYO4eC7uuZmsm5LMfD0YEaH19vRWptBPro4uW+22zxTrg4FAxPG/Pbv9p0IDS31fD7iJgoDUx1txPjRfsQ==
       Date:
-      - Mon, 14 Sep 2015 23:06:25 GMT
+      - Sun, 21 Aug 2016 13:00:38 GMT
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
-      Content-Length:
-      - '75'
     body:
       encoding: UTF-8
       string: |-
         {
+           "og_object": {
+              "id": "885136881526487",
+              "type": "website",
+              "updated_time": "2014-12-15T07:39:10+0000"
+           },
+           "share": {
+              "comment_count": 0,
+              "share_count": 0
+           },
            "id": "http://please-dont-register-a-site-that-breaks-this-test.com"
         }
     http_version: 
-  recorded_at: Mon, 14 Sep 2015 23:06:25 GMT
-recorded_with: VCR 2.9.3
+  recorded_at: Sun, 21 Aug 2016 13:00:38 GMT
+recorded_with: VCR 3.0.3

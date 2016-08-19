@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://graph.facebook.com/?id=http://www.google.com
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/534.56.5 (KHTML,
+        like Gecko) Version/5.1.6 Safari/534.56.5
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Etag:
+      - '"f3b63703816a3f649ad80d29b50db6f2421d9523"'
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Facebook-Api-Version:
+      - v2.1
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Content-Type:
+      - text/javascript; charset=UTF-8
+      X-Fb-Trace-Id:
+      - C8JlcMKO9J9
+      X-Fb-Rev:
+      - '2518278'
+      Vary:
+      - Accept-Encoding
+      X-Fb-Debug:
+      - 9GzrvgAhdKCpobvF505bTGWIi8WD1SLs55C5i/MvANAp1a8xOiRkkg5QS+93PUPNeAb0BZg0/el6f+0wUH/SVg==
+      Date:
+      - Sun, 21 Aug 2016 13:00:38 GMT
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+           "og_object": {
+              "id": "381702034999",
+              "description": "Check out the 2016 Doodle Fruit Games at g.co/fruit #GoogleDoodle",
+              "title": "Google",
+              "type": "website",
+              "updated_time": "2016-08-21T13:00:20+0000"
+           },
+           "share": {
+              "comment_count": 2,
+              "share_count": 36063703
+           },
+           "id": "http://www.google.com"
+        }
+    http_version: 
+  recorded_at: Sun, 21 Aug 2016 13:00:37 GMT
+recorded_with: VCR 3.0.3

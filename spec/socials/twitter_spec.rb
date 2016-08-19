@@ -6,9 +6,9 @@ describe PageRankr::Socials::Twitter do
     subject(:result){tracker.run}
 
     context 'with match', :vcr do
-      let(:site){'http://www.google.com'}
+      let(:site){'http://www.flippa.com'}
 
-      it{is_expected.to be_number > 0}
+      it{is_expected.to eq(0)}
     end
 
     context 'with no match', :vcr do

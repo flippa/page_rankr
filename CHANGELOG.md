@@ -1,5 +1,8 @@
 # Change Log
 
+## HEAD
+* Update public suffix gem to 2.0.1 [[#2](https://github.com/flippa/page_rankr/pull/2)]
+
 ## Version 4.6.1
 * Loosens version requirement for public_suffix (Hopefully a version 2 never comes out, so I don't have to hear about it again.)
 
