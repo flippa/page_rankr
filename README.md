@@ -1,12 +1,16 @@
 # PageRankr [![Build Status](https://api.travis-ci.org/blatyo/page_rankr.png)](http://travis-ci.org/blatyo/page_rankr)
 
-Provides an easy way to retrieve Google Page Rank, Alexa Rank, backlink counts, and index counts.
+Provides an easy way to retrieve Google Page Rank, Alexa Rank, backlink counts, index counts and different types of social signals.
 
-__Note: Version ~> 2.0 and ~> 3.0 used typheous internally which caused memory leak issues and failures on windows. 4.0.0 changes the implementation to use a Net::HTTP based library for better compatability.__
+__This project is abandoned. If you'd like to take ownership of this project, let me know.__
 
-__Note: Version >= 4.1.0 no longer actively maintains compatibility with Ruby 1.8.X. It will probably still work for the time being.__
+_Note: Version ~> 2.0 and ~> 3.0 used typheous internally which caused memory leak issues and failures on windows. 4.0.0 changes the implementation to use a Net::HTTP based library for better compatability._
 
-__Note: Version >= 4.2.0 no longer actively maintains compatibility with Ruby < 1.9.3. It will probably still work, but you may need to specify older versions for gems this library depends on in your Gemfile.__
+_Note: Version >= 4.1.0 no longer actively maintains compatibility with Ruby 1.8.X. It will probably still work for the time being._
+
+_Note: Version >= 4.2.0 no longer actively maintains compatibility with Ruby < 1.9.3. It will probably still work, but you may need to specify older versions for gems this library depends on in your Gemfile._
+
+_Note: Version >= 4.5.0 no longer actively maintains compatibility with Ruby < 2.0._
 
 Check out a little [web app][1] I wrote up that uses it or look at the [source][2].
 
@@ -105,7 +109,7 @@ If you don't specify a rank provider, then all of them are used.
 
     # this also gives the same result
     PageRankr.ranks('www.google.com')
-        #=> {:alexa_us=>1, :alexa_global=>1, :alexa_country=>1, :google=>10, :moz_rank => 8, :page_authority => 97}
+        #=> {:alexa_us=>1, :alexa_global=>1, :alexa_country=>1, :google=>9, :moz_rank=>8, :domain_authority=>100, :page_authority=>96}
 ```
 
 You can also use the alias `rank` instead of `ranks`.
@@ -113,10 +117,36 @@ You can also use the alias `rank` instead of `ranks`.
 Valid rank trackers are: `:alexa_country, :alexa_global, :alexa_us, :google, :moz_rank, :page_authority`. To get this you can do:
 
 ``` ruby
-    PageRankr.rank_trackers #=> [:alexa_country, :alexa_global, :alexa_us, :google, :moz_rank, :page_authority]
+    PageRankr.rank_trackers #=> [:alexa_us, :alexa_global, :alexa_country, :google, :moz_rank, :domain_authority, :page_authority]
 ```
 
 Alexa ranks are descending where 1 is the most popular. Google page ranks are in the range 0-10 where 10 is the most popular. If a site is unindexed then the rank will be nil.
+
+### Socials
+
+Social signals are a somewhat oversimplified way of telling how popular a site or page currently is.
+
+``` ruby
+    PageRankr.socials('www.google.com', :linked_in)        #=> {:linked_in=>1001}
+```
+
+If you don't specify a social tracker, then all of them are used.
+
+``` ruby
+    PageRankr.socials('www.google.com', :google, :linked_in, :pinterest, :stumbled_upon, :twitter, :vk)
+        #=> {:google=>10000, :linked_in=>1001, :pinterest=>75108, :stumple_upon=>255078, :twitter=>21933764, :vk=>3725}
+
+    # this also gives the same result
+    PageRankr.socials('www.google.com')
+        #=> {:google=>10000, :linked_in=>1001, :pinterest=>75108, :stumble_upon=>255078, :twitter=>21933764, :vk=>3725}
+```
+
+Valid social trackers are: `:google, :linked_in, :pinterest, :stumble_upon, :twitter, :vk`. To get this you can do:
+
+``` ruby
+    PageRankr.social_trackers #=> [:google, :linked_in, :pinterest, :stumble_upon, :twitter, :vk]
+```
+
 
 ## Use it a la carte!
 
@@ -146,14 +176,14 @@ Also, once a tracker has run three values will be accessible from it:
 
 One of the annoying things about each of these services is that they really don't like you scraping data from them. In order to deal with this issue, they throttle traffic from a single machine. The simplest way to get around this is to use proxy machines to make the requests.
 
-In PageRankr >= 3.2.0, this is much simpler. The first thing you'll need is a proxy service. Two are provided [here](https://github.com/blatyo/page_rankr/tree/master/lib/page_rankr/proxy_services). A proxy service must define a `proxy` method that takes two arguments. It should return a string like `user:password@192.168.1.1:50501`.
+In PageRankr >= 3.2.0, this is much simpler. The first thing you'll need is a proxy service. Two are provided [here](https://github.com/blatyo/page_rankr/tree/master/lib/page_rankr/proxy_services). A proxy service must define a `proxy` method that takes two arguments. It should return a string like `http://user:password@192.168.1.1:50501`.
 
 Once you have a proxy service, you can tell PageRankr to use it. For example:
 
 ``` ruby
     PageRankr.proxy_service = PageRankr::ProxyServices::Random.new([
-      'user:password@192.168.1.1:50501',
-      'user:password@192.168.1.2:50501'
+      'http://user:password@192.168.1.1:50501',
+      'http://user:password@192.168.1.2:50501'
     ])
 ```
 

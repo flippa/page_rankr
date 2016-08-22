@@ -1,5 +1,31 @@
 # Change Log
 
+## Version 4.6.1
+* Loosens version requirement for public_suffix (Hopefully a version 2 never comes out, so I don't have to hear about it again.)
+
+## Version 4.6.0
+* Bumps public_suffix
+* Support IDN addresses
+* Change alexa to support subdomains
+* Resctructure tests
+
+## Version 4.5.0
+* Bumps to public_suffix Gem to 1.5.1
+* Deprecates support for Ruby < 2.0
+
+## Version 4.4.1
+* Fixes Alexa US to use correct rank
+
+## Version 4.4.0
+* Adds social signals for google, linked_in, pinterest, stumble_upon, twitter, and vk
+
+## Version 4.3.0
+* Add Page Authority and Domain Authority ranks
+
+## Version 4.2.1
+* Fix Yahoo trackers xpath
+* Require newer version of public_suffix_service
+
 ## Version 4.2.0
 * Added Moz Rank and Page Authority metrics.
 
