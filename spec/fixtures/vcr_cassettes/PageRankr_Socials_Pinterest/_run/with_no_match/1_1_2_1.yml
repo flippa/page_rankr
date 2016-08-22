@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.pinterest.com/v1/urls/count.json?callback=_&url=http://please-dont-register-a-site-that-breaks-this-test.com
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/534.56.5 (KHTML,
+        like Gecko) Version/5.1.6 Safari/534.56.5
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/javascript
+      Expires:
+      - Fri, 19 Aug 2016 11:10:06 GMT
+      X-Content-Type-Options:
+      - nosniff
+      X-Pinterest-Rid:
+      - '112449257451'
+      X-Varnish:
+      - '2429635917'
+      Content-Length:
+      - '83'
+      Date:
+      - Fri, 19 Aug 2016 10:55:06 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: _({"url":"http://please-dont-register-a-site-that-breaks-this-test.com","count":0})
+    http_version: 
+  recorded_at: Fri, 19 Aug 2016 10:55:06 GMT
+recorded_with: VCR 3.0.3

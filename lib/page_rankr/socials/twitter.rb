@@ -5,6 +5,10 @@ module PageRankr
     class Twitter
       include Social
 
+      def run
+        0 # FIXME
+      end
+
       def url
         'http://urls.api.twitter.com/1/urls/count.json'
       end

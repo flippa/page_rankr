@@ -6,7 +6,7 @@ describe PageRankr::Backlinks::Google do
     subject(:result){tracker.run}
 
     context 'with match', :vcr do
-      let(:site){'http://www.google.com'}
+      let(:site){'http://www.flippa.com'}
 
       it{is_expected.to be_number > 0}
     end

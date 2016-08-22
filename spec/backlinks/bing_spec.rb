@@ -6,7 +6,7 @@ describe PageRankr::Backlinks::Bing do
     subject(:result){tracker.run}
 
     context 'with match', :vcr do
-      let(:site){'http://www.google.com'}
+      let(:site){'http://www.flippa.com'}
 
       it{is_expected.to be_number > 0}
     end
@@ -15,7 +15,7 @@ describe PageRankr::Backlinks::Bing do
       let(:site){'http://please-dont-register-a-site-that-breaks-this-test.com'}
 
       # currently matches suggested results
-      it{is_expected.to be_number < 2}
+      it{is_expected.to be_number < 3}
     end
   end
 end
